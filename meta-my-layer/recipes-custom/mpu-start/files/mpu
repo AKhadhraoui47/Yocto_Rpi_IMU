@@ -1,0 +1,31 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:             mpu
+# Required-Start:       $networking
+# Required-Stop:
+# Default-Start:        2 3 4 5
+# Default-Stop:         1
+# Short-Description:    Data aqcuisition from mpu6050
+### END INIT INFO
+#
+
+do_start()
+{
+	start-stop-daemon --start --exec mpulaunch
+}
+
+
+do_stop()
+{
+	start-stop-daemon --stop --name mpulaunch
+}
+
+
+case "$1" in
+  start) do_start ;;
+  stop)  do_stop  ;;
+  restart) do_stop; do_start ;;
+  *) echo "Usage: $0 {start|stop|restart}" >&2; exit 1 ;;
+esac
+
+exit 0

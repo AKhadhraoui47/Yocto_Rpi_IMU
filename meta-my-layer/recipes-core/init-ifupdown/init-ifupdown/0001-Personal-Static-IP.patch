@@ -1,0 +1,50 @@
+From e8fb1bd645c955fb874a69d76e44f0c55a829afe Mon Sep 17 00:00:00 2001
+From: tsarbomba <mohamed@gmail.com>
+Date: Sat, 4 May 2024 14:00:13 +0100
+Subject: [PATCH] Personal Static IP.
+
+---
+ interfaces | 24 ++++++------------------
+ 1 file changed, 6 insertions(+), 18 deletions(-)
+
+diff --git a/interfaces b/interfaces
+index 0acf4cf..2e63515 100644
+--- a/interfaces
++++ b/interfaces
+@@ -5,27 +5,15 @@ auto lo
+ iface lo inet loopback
+ 
+ # Wireless interfaces
+-iface wlan0 inet dhcp
++auto wlan0
++iface wlan0 inet static
++	address 192.168.43.31
++	netmask 255.255.255.0
++	gateway 192.168.43.148
++	dns-nameserver 8.8.8.8
+ 	wireless_mode managed
+ 	wireless_essid any
+ 	wpa-driver wext
+ 	wpa-conf /etc/wpa_supplicant.conf
+ 
+-iface atml0 inet dhcp
+-
+-# Wired or wireless interfaces
+-auto eth0
+-iface eth0 inet dhcp
+-iface eth1 inet dhcp
+-
+-# Ethernet/RNDIS gadget (g_ether)
+-# ... or on host side, usbnet and random hwaddr
+-iface usb0 inet static
+-	address 192.168.7.2
+-	netmask 255.255.255.0
+-	network 192.168.7.0
+-	gateway 192.168.7.1
+-
+-# Bluetooth networking
+-iface bnep0 inet dhcp
+ 
+-- 
+2.25.1
+

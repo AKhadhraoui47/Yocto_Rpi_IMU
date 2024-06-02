@@ -1,0 +1,22 @@
+CC:=gcc
+STAT:=ar
+OPTIONS:=rcs
+COMPILESTAGE:=-c
+NAME:=-o
+
+SRCS:= $(wildcard *.c)
+OBJ:= $(SRCS:%.c=%.o)
+TARGET:= newlib.a
+
+all: $(TARGET) clean
+
+
+%.o:%.c
+	@echo "Target" $@ "Prereq" $<
+	@echo "Executed Command: " $(CC) $(NAME) $@ $(COMPILESTAGE) $<
+	$(CC) $(NAME) $@ $(COMPILESTAGE) $<
+
+$(TARGET): $(OBJ)
+	$(STAT) $(OPTIONS) $@ $(OBJ)
+clean:
+	rm *.o

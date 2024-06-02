@@ -1,0 +1,56 @@
+
+KMOD='/home/root/inv_mpu6050'
+INS=0
+
+
+modprobe i2c_bcm2835
+modprobe i2c-dev
+
+#Check if the mpu6050 is connected
+
+if [ -n "$(i2cdetect -y 1 | grep 68)" ] || [ -n "$(i2cdetect -y 1 | grep UU)" ] ;
+then
+	echo "Sensor: mpu6050 detected"
+else
+	echo "Sensor: mpu6050 not detected"
+	exit 1
+fi
+
+#Inserting MPU6050 module
+
+cd $KMOD
+modprobe inv-mpu6050-i2c
+cd /home/root
+
+#Creating a new instance
+
+if [ $INS -eq 0 ];
+then
+	echo mpu6050 0x68 > /sys/bus/i2c/devices/i2c-1/new_device
+	INS=1
+fi
+
+#Read/Write FileSystem
+
+rw
+
+#Reading raw data from the sensor
+
+while [ -n "$(i2cdetect -y 1 | grep 68)" ] || [ -n "$(i2cdetect -y 1 | grep UU)" ] ;
+do
+
+        #Read Row
+	row=$(cat /sys/class/i2c-adapter/i2c-1/1-0068/iio\:device0/in_anglvel_x_raw)
+	echo Row: $row >> /home/root/mpuData
+
+        #Read Pitch
+	pitch=$(cat /sys/class/i2c-adapter/i2c-1/1-0068/iio\:device0/in_anglvel_y_raw)
+	echo Pitch: $pitch >> /home/root/mpuData
+
+        #Read Yaw
+	yaw=$(cat /sys/class/i2c-adapter/i2c-1/1-0068/iio\:device0/in_anglvel_z_raw)
+	echo Yaw: $yaw >> /home/root/mpuData
+	
+	sleep 2
+
+done

@@ -1,0 +1,6 @@
+.PHONY: static dynamic
+
+static:
+	@make -f staticLibGen
+dynamic:
+	@make -f dynamicLibGen
