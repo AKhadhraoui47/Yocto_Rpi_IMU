@@ -45,7 +45,20 @@ The result is an object file.
 ak47@ak47:~$ gcc -o file.o -c file.s
 ```  
   
-### 4. Linking
+### 4. Linking  
+  
+The linker combines one or more object files with libraries, resolving references to external symbols (functions and variables) to produce an executable. This step includes:  
+  
+* Linking standard libraries (e.g., C standard library)  
+* Handling static and dynamic linking  
+* Relocating code and data addresses  
+  
+The output is the final executable program.  
+  
+```console
+ak47@ak47:~$ gcc -o exe file.o 
+```
+
   
 
  
