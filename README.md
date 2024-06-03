@@ -202,7 +202,24 @@ ak47@ak47:~$ sudo cp libmylib.so /usr/lib
   
 Up to now we have managed creating executables and libraries with a limited number of files but for projects with numerous files, manually repeating compilation commands can be tedious and error-prone. To efficiently manage and automate the process of compiling and linking these files into libraries or executables, using a **Makefile** is essential.  
   
+## Makefile  
   
+A Makefile is a special file used by the make build automation tool to compile and link programs. It defines how to derive the target program from the source files, automating the build process.  
+  
+### 1. Basic Structure of a Makefile  
+  
+```
+target: dependencies
+    command
+```  
+  
+* **Target**: typically the name of the file that you want to create/label for a group of commands  
+* **Dependencies**: files that the target depends on, source files/other targets  
+* **Command**: commands that are executed to build the target  
+
+
+
+## References  
   
 
    
