@@ -153,9 +153,18 @@ ak47@ak47:~$ gcc -o factorial.o factorial.c
 ```console
 ak47@ak47:~$ ar rcs libmylib.a factorial.o denombrement.o  
 ```  
+  
 > r (replace): Insert the files into the archive, replacing any existing files with the same name.
 c (create): Create the archive if it does not already exist.
 s (index): Create an index for the archive, allowing for faster symbol lookup.
+  
+* **Link the static Library when compiling**  
+  
+```console
+ak47@ak47:~$ gcc file.c -L. -lmylib -o exe
+```  
+  
+> **-L** directs linker to look for the lib in specified path. **-l** indicates the lib name.
 
   
 
