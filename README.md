@@ -144,8 +144,8 @@ Static libraries are collections of object files linked into the program at comp
 * **Compiling to Object files**  
   
 ```console
-ak47@ak47:~$ gcc -o denombrement.o denombrement.c  
-ak47@ak47:~$ gcc -o factorial.o factorial.c  
+ak47@ak47:~$ gcc -o denombrement.o -c denombrement.c  
+ak47@ak47:~$ gcc -o factorial.o -c factorial.c  
 ```  
   
 * **Create the Library Archive**  
@@ -154,9 +154,9 @@ ak47@ak47:~$ gcc -o factorial.o factorial.c
 ak47@ak47:~$ ar rcs libmylib.a factorial.o denombrement.o  
 ```  
   
-> r (replace): Insert the files into the archive, replacing any existing files with the same name.
-c (create): Create the archive if it does not already exist.
-s (index): Create an index for the archive, allowing for faster symbol lookup.
+> **r** (replace): Insert the files into the archive, replacing any existing files with the same name.
+**c** (create): Create the archive if it does not already exist.
+**s** (index): Create an index for the archive, allowing for faster symbol lookup.
   
 * **Link the static Library when compiling**  
   
@@ -164,7 +164,24 @@ s (index): Create an index for the archive, allowing for faster symbol lookup.
 ak47@ak47:~$ gcc file.c -L. -lmylib -o exe
 ```  
   
-> **-L** directs linker to look for the lib in specified path. **-l** indicates the lib name.
+> **-L** directs linker to look for the lib in specified path. **-l** indicates the lib name.  
+  
+### 2. Dynamic Libraries  
+  
+Dynamic libraries are linked at runtime, not at compile time. This allows for smaller executable sizes and the possibility to update libraries without recompiling programs that depend on them. To create a dynamic library let's consider [denombrement.c](Makefile/denombrement.c) and [factorial.c](Makefile/factorial.c), and we start by:  
+  
+* **Compiling to Object files**
+
+```console
+ak47@ak47:~$ gcc -fPIC -o denombrement.o -c denombrement.c
+ak47@ak47:~$ gcc -fPIC -o factorial.o -c factorial.c
+```  
+  
+> **-fPIC** is used to generate machine code that is position-independent, meaning it can be loaded at any memory address without modification, essential for for shared libs often loaded at different memory addresses.
+  
+
+   
+
 
   
 
