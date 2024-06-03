@@ -33,6 +33,21 @@ The result is an assembly file.
   
 ```console  
 ak47@ak47:~$ gcc -o file.s -S file.i
+``` 
+  
+### 3. Assembly
+  
+The assembler converts the assembly code into machine code, producing an object file. This file contains binary code that the machine can execute, but it is not yet a complete program.  
+  
+The result is an object file.  
+  
+```console
+ak47@ak47:~$ gcc - file.s -S file.i
 ```  
+  
+### 4. Linking
+  
+
+ 
 
 
