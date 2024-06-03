@@ -231,7 +231,7 @@ COMPILESTAGE:=-c
 NAME:=-o
 ```  
   
-* Creating variables to store all source code files **SRCS** and the objects files **OBJ** needed ~~ already existing/created ~~. 
+* Creating variables to store all source code files **SRCS** and the objects files **OBJ** needed ~~already existing/created~~. 
   
 > In a Makefile, a **wildcard** is a feature that allows you to specify a pattern to match multiple files.
       
