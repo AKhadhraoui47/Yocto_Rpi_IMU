@@ -12,6 +12,6 @@ The compilation process of C code involves several steps, each transforming the 
 
 The preprocessor handles directives (lines starting with #) in the source code. It performs tasks such as:  
   
-      * Including header files ( #include )  
-      * Macro substitution ( #define )  
-      * Conditional compilation ( #ifdef, #ifndef, etc.)  
+* Including header files ( #include )  
+* Macro substitution ( #define )  
+* Conditional compilation ( #ifdef, #ifndef, etc.)  
