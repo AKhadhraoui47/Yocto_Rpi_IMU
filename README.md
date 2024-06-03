@@ -277,6 +277,8 @@ clean:
 	rm *.o
 ```  
   
+After going over the key-elements of Embedded-Linux and getting familiar with its tools practically, fasten your seatbelts to delve into the world of **Yocto**  
+    
 ## YOCTO  
   
 ## References  
