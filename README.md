@@ -6,7 +6,7 @@ Exploring **Yocto** and the basics of **Embedded Linux** from scratch can seem t
 
 ## Compilation Process
 
-The compilation process of C code involves several steps, each transforming the source code into executable machine code. Here are the key steps:
+The compilation process of C code involves several steps, each transforming the source code into executable machine code. To explore practically the process we will be using the **GNU Compiler Collection GCC**. Here are the key steps:
 
 ### 1. Preprocessing
 
@@ -21,4 +21,18 @@ The output is an expanded source code file.
 ```console  
 ak47@ak47:~$ gcc -o file.i -E file.c    
 ```  
+### 2. Compilation
+
+The compiler translates the preprocessed code into assembly code. This step includes:  
+  
+* Syntax and semantic analysis  
+* Intermediate code generation  
+* Optimization (depending on compiler settings)  
+  
+The result is an assembly file.  
+  
+```console  
+ak47@ak47:~$ gcc -o file.s -S file.i
+```  
+
 
