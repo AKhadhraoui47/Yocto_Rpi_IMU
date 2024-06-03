@@ -125,7 +125,7 @@ To check the value of a variable
    
 To resume the program after stopping by a breakpoint  
    
-```shell
+```console
 (gdb) continue
 Continues till end of program/Next breakpoint  
 Code stopped due to breakpoint at entry point of func  
