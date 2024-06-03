@@ -101,7 +101,7 @@ int main() {
   
 To insert a breakpoint we use **break** command  
   
-```shell
+```
 (gdb) break 10
 Breakpoint inserted in file.c: line 8
 (gdb) break func
@@ -110,7 +110,7 @@ Breakpoint inserted in file.c: func
   
 To run the code normally the **run** command  
   
-```shell
+```
 (gdb) run
 a = 5
 Code stopped due to breakpoint at line 10
@@ -118,7 +118,7 @@ Code stopped due to breakpoint at line 10
   
 To check the value of a variable 
   
-```shell  
+```  
 (gdb) print a
 5
 ```
