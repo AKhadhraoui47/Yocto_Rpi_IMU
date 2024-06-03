@@ -77,7 +77,7 @@ ak47@ak47:~$ gcc -g -o exe file.c
   
 Once we compiled our C program with debugging information, we can start GDB with our executable. We will see the GDB prompt **(gdb)**. From here, we can use various commands to debug our program.
   
-```bash
+```console
 ak47@ak47:~$ gdb exe  
 (gdb) 
 ```
