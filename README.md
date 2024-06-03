@@ -220,7 +220,25 @@ target: dependencies
 ### 2. Makefile Example  
   
 To get familiar with makefiles and their structure i have crafted makefiles to streamline the process of creating **Static** and **Dynamic** libraries, [dynamicLibGen](Makefile/dynamicLibGen) and [staticLibGen](Makefile/staticLibGen). Let's take for example the [staticLibGen](Makefile/staticLibGen) and understand its composition:  
+    
+* Variable definition for defining the compiler **CC**, options **OPTIONS COMPILESTAGE NAME**.
   
+```
+CC:=gcc
+STAT:=ar
+OPTIONS:=rcs
+COMPILESTAGE:=-c
+NAME:=-o
+```  
+  
+* Creating variables to store all source code files **SRCS** and the objects files **OBJ** needed ~~ already existing/created ~~. 
+  
+> In a Makefile, a **wildcard** is a feature that allows you to specify a pattern to match multiple files.
+      
+```
+SRCS:= $(wildcard *.c)
+OBJ:= $(SRCS:%.c=%.o)
+```
 
 
 
