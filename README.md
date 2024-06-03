@@ -239,7 +239,30 @@ NAME:=-o
 SRCS:= $(wildcard *.c)
 OBJ:= $(SRCS:%.c=%.o)
 ```
-
+  
+* Variable containing the output desired after the execution of this makefile.
+  
+```
+TARGET:= newlib.a
+```  
+  
+* Specifying the targets to build in the standard target **all**. 
+  
+```
+all: $(TARGET) clean
+```  
+  
+* Compiling available source files into object files  
+  
+> **$@** is a standard reference to the target of the rule. **$<** is a standard reference to the dependency of the rule.**@echo** used to execute echo command without displaying on terminal.
+   
+```
+%.o:%.c
+	@echo "Target" $@ "Prereq" $<
+	@echo "Executed Command: " $(CC) $(NAME) $@ $(COMPILESTAGE) $<
+	$(CC) $(NAME) $@ $(COMPILESTAGE) $<
+```  
+  
 
 
 ## References  
