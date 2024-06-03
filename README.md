@@ -219,7 +219,7 @@ target: dependencies
   
 ### 2. Makefile Example  
   
-To get familiar with makefiles and their structure i have crafted makefiles to streamline the process of creating **Static** and **Dynamic** libraries, [dynamicLibGen](Makefile/dynamicLibGen) and [staticLibGen](Makefile/staticLibGen). Let's take for example the [staticLibGen](Makefile/staticLibGen) and understand its composition:  
+To get familiar with makefiles and their structure i have crafted makefiles to streamline the process of creating **Static** and **Dynamic** libraries from source codes under the same directory, [dynamicLibGen](Makefile/dynamicLibGen) and [staticLibGen](Makefile/staticLibGen). Let's take for example the [staticLibGen](Makefile/staticLibGen) and understand its composition:  
     
 * Variable definition for defining the compiler **CC**, options **OPTIONS COMPILESTAGE NAME**.
   
@@ -263,8 +263,19 @@ all: $(TARGET) clean
 	$(CC) $(NAME) $@ $(COMPILESTAGE) $<
 ```  
   
-
-
+* Building the target to create the static library.
+  
+```
+$(TARGET): $(OBJ)
+$(STAT) $(OPTIONS) $@ $(OBJ)
+```
+  
+* Cleaning the directory from object files  
+  
+```
+clean:
+	rm *.o
+```
 ## References  
   
 
