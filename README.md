@@ -275,7 +275,10 @@ $(STAT) $(OPTIONS) $@ $(OBJ)
 ```
 clean:
 	rm *.o
-```
+```  
+  
+## YOCTO  
+  
 ## References  
   
 
