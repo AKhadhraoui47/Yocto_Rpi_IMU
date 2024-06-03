@@ -177,7 +177,28 @@ ak47@ak47:~$ gcc -fPIC -o denombrement.o -c denombrement.c
 ak47@ak47:~$ gcc -fPIC -o factorial.o -c factorial.c
 ```  
   
-> **-fPIC** is used to generate machine code that is position-independent, meaning it can be loaded at any memory address without modification, essential for for shared libs often loaded at different memory addresses.
+> **-fPIC** is used to generate machine code that is position-independent, meaning it can be loaded at any memory address without modification, essential for for shared libs often loaded at different memory addresses.  
+  
+* **Create the dynamic Library**
+
+```console
+ak47@ak47:~$ gcc -shared -o libmylib.so factorial.o denombrement.o
+```  
+  
+* **Link the dynamic Library**
+
+```console
+ak47@ak47:~$ gcc file.c -L. -lmylib -o exe           
+```   
+  
+* **Set the Library Path**: Ensure the runtime linker can find the shared library:     
+  
+```console
+ak47@ak47:~$ export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+ak47@ak47:~$ sudo cp libmylib.so /usr/lib
+```
+  
+
   
 
    
