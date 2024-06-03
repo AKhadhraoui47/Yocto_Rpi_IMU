@@ -8,9 +8,9 @@ Exploring **Yocto** and the basics of **Embedded Linux** from scratch can seem t
 
 The compilation process of C code involves several steps, each transforming the source code into executable machine code. Here are the key steps:
 
-### 1.Preprocessing
+### 1. Preprocessing
 
 The preprocessor handles directives (lines starting with #) in the source code. It performs tasks such as:  
-     - Including header files ( #include )  
-     - Macro substitution ( #define )  
-     - Conditional compilation ( #ifdef, #ifndef, etc.)  
+     + Including header files ( #include )  
+     + Macro substitution ( #define )  
+     + Conditional compilation ( #ifdef, #ifndef, etc.)  
