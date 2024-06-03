@@ -93,11 +93,12 @@ void func(int x) {
   
 int main() {  
     int a = 5;  
+    printf("a = %d\n", a);    
     func(a);  
     return 0;  
 }  
 ```
   
-  
+
   
 
