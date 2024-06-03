@@ -42,7 +42,7 @@ The assembler converts the assembly code into machine code, producing an object 
 The result is an object file.  
   
 ```console
-ak47@ak47:~$ gcc - file.s -S file.i
+ak47@ak47:~$ gcc -o file.o -c file.s
 ```  
   
 ### 4. Linking
