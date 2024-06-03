@@ -18,9 +18,9 @@ index 0acf4cf..2e63515 100644
 -iface wlan0 inet dhcp
 +auto wlan0
 +iface wlan0 inet static
-+	address 192.168.43.31
-+	netmask 255.255.255.0
-+	gateway 192.168.43.148
++	address 
++	netmask 
++	gateway 
 +	dns-nameserver 8.8.8.8
  	wireless_mode managed
  	wireless_essid any
@@ -37,10 +37,10 @@ index 0acf4cf..2e63515 100644
 -# Ethernet/RNDIS gadget (g_ether)
 -# ... or on host side, usbnet and random hwaddr
 -iface usb0 inet static
--	address 192.168.7.2
--	netmask 255.255.255.0
--	network 192.168.7.0
--	gateway 192.168.7.1
+-	address 
+-	netmask
+-	network 
+-	gateway 
 -
 -# Bluetooth networking
 -iface bnep0 inet dhcp

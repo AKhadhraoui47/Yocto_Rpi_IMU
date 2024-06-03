@@ -3,7 +3,7 @@ ctrl_interface_group=0
 update_config=1
 
 network={
-	ssid="MBKd"
-	psk="00000000"
+	ssid="SSID"
+	psk="PASSWORD"
 	scan_ssid=1
 }
