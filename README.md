@@ -99,13 +99,33 @@ int main() {
 }  
 ```
   
-To run the code normally the command we use 
+To insert a breakpoint we use **break** command  
+  
+```console
+(gdb) break 10
+Breakpoint inserted in file.c: line 8
+(gdb) break func
+Breakpoint inserted in file.c: func
+```
+  
+To run the code normally the **run** command  
   
 ```console
 (gdb) run
 a = 5
-x = 5
+Code stopped due to breakpoint at line 10
 ```
+  
+To resume the program after stopping by a breakpoint  
+   
+```console
+(gdb) continue
+Continues till end of program/Next breakpoint  
+Code stopped due to breakpoint at entry point of function **func**  
+(gdb) step  
+Line by line execution  
+```
+
 
   
 
