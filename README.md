@@ -19,7 +19,6 @@ The preprocessor handles directives (lines starting with #) in the source code. 
 The output is an expanded source code file.  
   
 ```console  
-foo@bar:~$ gcc -o file.i -E file.c  
-foo  
+ak47@ak47:~$ gcc -o file.i -E file.c    
 ```  
 
