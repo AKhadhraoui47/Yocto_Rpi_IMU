@@ -139,7 +139,7 @@ This overview for Compilation Process and Debugging tools is a solid foundation 
   
 ### 1. Static Libraries  
   
-Static libraries are collections of object files linked into the program at compile time. They become part of the final executable, making it self-contained but larger in size. To create a static library let's consider **denombrement.c factorial.c** under **Makefile** folder, we start by:    
+Static libraries are collections of object files linked into the program at compile time. They become part of the final executable, making it self-contained but larger in size. To create a static library let's consider [denombrement.c](Makefile/denombrement.), we start by:    
   
 * **Compiling to Object files**
   
