@@ -73,4 +73,14 @@ This time we will be compiling our source code with the **-g** option to include
 ak47@ak47:~$ gcc -g -o exe file.c
 ```
   
+### 2. Start GDB 
+  
+Once we compiled our C program with debugging information, we can start GDB with our executable. We will see the GDB prompt **(gdb)**. From here, we can use various commands to debug our program.
+  
+```console
+ak47@ak47:~$ gdb exe  
+(gdb) 
+```
+  
+  
 
