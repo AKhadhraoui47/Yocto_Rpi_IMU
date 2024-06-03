@@ -82,9 +82,9 @@ ak47@ak47:~$ gdb exe
 (gdb) 
 ```
   
-Let's consider **file.c** has the source code below.  
+Let's consider **file.c** has the source code below:  
   
-```
+```c
 #include <stdio.h>
 
 void func(int x) {  
