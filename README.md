@@ -118,7 +118,7 @@ Code stopped due to breakpoint at line 10
   
 To resume the program after stopping by a breakpoint  
    
-```console
+```shell
 (gdb) continue
 Continues till end of program/Next breakpoint  
 Code stopped due to breakpoint at entry point of function **func**  
