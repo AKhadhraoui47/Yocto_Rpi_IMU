@@ -204,7 +204,7 @@ Up to now we have managed creating executables and libraries with a limited numb
   
 ## Makefile  
   
-A Makefile is a special file used by the make build automation tool to compile and link programs. It defines how to derive the target program from the source files, automating the build process.  
+A Makefile is a special file used by the ***make*** build automation tool to compile and link programs. It defines how to derive the target program from the source files, automating the build process.  
   
 ### 1. Basic Structure of a Makefile  
   
@@ -216,6 +216,11 @@ target: dependencies
 * **Target**: typically the name of the file that you want to create/label for a group of commands  
 * **Dependencies**: files that the target depends on, source files/other targets  
 * **Command**: commands that are executed to build the target  
+  
+### 2. Makefile Example  
+  
+To get familiar with makefiles and their structure i have crafted makefiles to streamline the process of creating **Static** and **Dynamic** libraries, [dynamicLibGen](Makefile/dynamicLibGen) and [staticLibGen](Makefile/staticLibGen). Let's take for example the [staticLibGen](Makefile/staticLibGen) and understand its composition:  
+  
 
 
 
