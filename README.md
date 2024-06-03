@@ -4,7 +4,7 @@ It concludes with the development of a custom-built image for a Raspberry Pi, de
 
 Exploring **Yocto** and the basics of **Embedded Linux** from scratch can seem to be a heavy task to handle, therefore to have a steady progress, it is preferable to break it down into manageable topics.
 
-## The Compilation Process
+## Compilation Process
 
 The compilation process of C code involves several steps, each transforming the source code into executable machine code. Here are the key steps:
 
@@ -15,3 +15,11 @@ The preprocessor handles directives (lines starting with #) in the source code. 
 * Including header files ( #include )  
 * Macro substitution ( #define )  
 * Conditional compilation ( #ifdef, #ifndef, etc.)  
+  
+The output is an expanded source code file.  
+  
+```console  
+foo@bar:~$ gcc -o file.i -E file.c  
+foo  
+```  
+
