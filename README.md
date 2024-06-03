@@ -198,7 +198,11 @@ ak47@ak47:~$ export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
 ak47@ak47:~$ sudo cp libmylib.so /usr/lib
 ```
   
-> The first approach makes the lib ***temporarily*** reachable, once the session is closed the path is lost. Second command makes a copy of lib under the **/usr/lib** path, always visible by the runtime linker. 
+> The first approach makes the lib ***temporarily*** reachable, once the session is closed the path is lost. Second command makes a copy of lib under the **/usr/lib** path, always visible by the runtime linker.  
+  
+Up to now we have managed creating executables and libraries with a limited number of files but for projects with numerous files, manually repeating compilation commands can be tedious and error-prone. To efficiently manage and automate the process of compiling and linking these files into libraries or executables, using a **Makefile** is essential.  
+  
+  
   
 
    
