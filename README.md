@@ -116,12 +116,18 @@ a = 5
 Code stopped due to breakpoint at line 10
 ```
   
+To check the value of a variable 
+  
+```shell  
+(gdb) print a
+5```
+   
 To resume the program after stopping by a breakpoint  
    
 ```shell
 (gdb) continue
 Continues till end of program/Next breakpoint  
-Code stopped due to breakpoint at entry point of function func  
+Code stopped due to breakpoint at entry point of func  
 (gdb) step  
 Line by line execution  
 ```
