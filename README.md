@@ -120,7 +120,8 @@ To check the value of a variable
   
 ```shell  
 (gdb) print a
-5```
+5
+```
    
 To resume the program after stopping by a breakpoint  
    
