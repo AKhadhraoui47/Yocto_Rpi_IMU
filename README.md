@@ -60,4 +60,17 @@ ak47@ak47:~$ gcc -o exe file.o
 ```  
     
 > Going through all these steps is not mandantory to get the executable. These steps can be summarized in single command: **ak47@ak47:~$ gcc -o exe file.c**  
- 
+  
+## Debugging 
+  
+Debugging C code involves using tools and techniques to find and fix errors or bugs in your program. The GNU Debugger (GDB) is a powerful tool for debugging C programs. Here are the basic steps to use GDB:  
+  
+### 1. Compile with Debug Information
+  
+This time we will be compiling our source code with the **-g** option to include debug information.  
+  
+```console
+ak47@ak47:~$ gcc -g -o exe file.c
+```
+  
+
