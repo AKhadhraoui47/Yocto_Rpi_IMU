@@ -146,7 +146,16 @@ Static libraries are collections of object files linked into the program at comp
 ```console
 ak47@ak47:~$ gcc -o denombrement.o denombrement.c  
 ak47@ak47:~$ gcc -o factorial.o factorial.c  
-```
+```  
+  
+* **Create the Library Archive**  
+  
+```console
+ak47@ak47:~$ ar rcs libmylib.a factorial.o denombrement.o  
+```  
+> r (replace): Insert the files into the archive, replacing any existing files with the same name.
+c (create): Create the archive if it does not already exist.
+s (index): Create an index for the archive, allowing for faster symbol lookup.
 
   
 
