@@ -63,7 +63,7 @@ ak47@ak47:~$ gcc -o exe file.o
   
 ## Debugging 
   
-Debugging C code involves using tools and techniques to find and fix errors or bugs in your program. The GNU Debugger (GDB) is a powerful tool for debugging C programs. Here are the basic steps to use GDB:  
+Debugging C code involves using tools and techniques to find and fix errors or bugs in your program. The **GNU Debugger GDB** is a powerful tool for debugging C programs. Here are the basic steps to use GDB:  
   
 ### 1. Compile with Debug Information
   
