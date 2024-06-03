@@ -132,7 +132,10 @@ Code stopped due to breakpoint at entry point of func
 (gdb) step  
 Line by line execution  
 ```
+  
+This overview for Compilation Process and Debugging tools is a solid foundation to go further in understanding another key element of our code which is **Libraries**  
 
+  
 
   
 
