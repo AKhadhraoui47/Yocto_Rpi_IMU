@@ -99,6 +99,13 @@ int main() {
 }  
 ```
   
+To run the code normally the command we use 
+  
+```console
+(gdb) run
+a = 5
+x = 5
+```
 
   
 
