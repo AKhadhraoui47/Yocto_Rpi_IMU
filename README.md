@@ -198,7 +198,7 @@ ak47@ak47:~$ export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
 ak47@ak47:~$ sudo cp libmylib.so /usr/lib
 ```
   
-
+> The first approach makes the lib ***temporarily*** reachable, once the session is closed the path is lost. Second command makes a copy of lib under the **/usr/lib** path, always visible by the runtime linker. 
   
 
    
