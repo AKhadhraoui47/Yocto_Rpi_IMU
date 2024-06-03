@@ -58,6 +58,6 @@ The output is the final executable program.
 ```console
 ak47@ak47:~$ gcc -o exe file.o 
 ```
-  
-> Going through all these steps is not mandantory to get the executable. These steps can be summarized in single command #C5C6C7 ak47@ak47:~$ gcc -o exe file.c  
+    
+> Going through all these steps is not mandantory to get the executable. These steps can be summarized in single command **ak47@ak47:~$ gcc -o exe file.c**  
  
