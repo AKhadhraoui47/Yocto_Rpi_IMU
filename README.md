@@ -365,8 +365,19 @@ Now that our build environment is "set" we can start configuring our image, and 
   
 Let's take a look at our file and understand its composition:  
   
-*  
+* **Specifying the Target**: The Machine variable assigns the target of the build  
   
+```
+MACHINE = "raspberrypi4-64"
+```    
+  
+* **Specifying the downloads and sstate-cache directories**: These folders contain essential files for the build
+  
+```
+DL_DIR = "${TOPDIR}/../../downloads"
+SSTATE_DIR = "${TOPDIR}/../../sstate-cache"
+```  
+
 ## References  
   
 
