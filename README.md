@@ -363,7 +363,7 @@ ak47@ak47~:$ bitbake-layers add-layer yocto_ws/layers/meta-rapberrypi
 Now that our build environment is "set" we can start configuring our image, and the first file we will apply changes to, is the [local.conf](build-rpi/conf/local.conf).  
 > The **local.conf** file is a key configuration file where we define settings specific to our build environment and preferences such as the target machine and additional features.    
   
-Let's take a look at our file and understand its composition:  
+Let's take a look at our file and understand some of its components:  
   
 * **Specifying the Target**: The Machine variable assigns the target of the build  
   
@@ -376,6 +376,20 @@ MACHINE = "raspberrypi4-64"
 ```
 DL_DIR = "${TOPDIR}/../../downloads"
 SSTATE_DIR = "${TOPDIR}/../../sstate-cache"
+```  
+  
+* **Specifying the image packaging format**  
+  
+```
+IMAGE_FSTYPES = "rpi-sdimg"
+```   
+  
+* **Adding a Root user**
+> Extrausers is used to manage user and group creation within the built image.
+  
+```
+INHERIT += "extrausers" 
+EXTRA_USERS_PARAMS += "usermod -p '\$5\$f0r5NbGw3PeHlbq/\$qUkA2Kq72d/zCro3vj9UVtONjMjm7EL1RIaKmyO7G2B' root;"
 ```  
   
 
