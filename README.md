@@ -328,7 +328,7 @@ First of all we need to download the reference distribution of Yocto which is Po
 ak47@ak47:~$ cd yocto_ws/layers/  
 ak47@ak47:~$ git clone git://git.yoctoproject.org/poky -b kirkstone
 ```
-First thing to do to be able to generate a compatible image with the RaspberryPi specifications. These specifications are described in recipes, archives provided by the Rpi layer that we should download under **yocto_ws/layers/**:  
+First thing to do to be able to generate a compatible image with the RaspberryPi hardware specifications is to download the Rpi layer which describes them in recipes configuration files and archives:  
   
 ```console
 ak47@ak47:~$ git clone git://git.yoctoproject.org/meta-raspberrypi -b kirkstone  
@@ -377,6 +377,7 @@ MACHINE = "raspberrypi4-64"
 DL_DIR = "${TOPDIR}/../../downloads"
 SSTATE_DIR = "${TOPDIR}/../../sstate-cache"
 ```  
+  
 
 ## References  
   
