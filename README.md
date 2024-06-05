@@ -361,7 +361,8 @@ ak47@ak47~:$ bitbake-layers add-layer yocto_ws/layers/meta-rapberrypi
 ```  
    
 Now that our build environment is "set" we can start configuring our image, and the first file we will apply changes to, is the [local.conf](build-rpi/conf/local.conf).  
-> The **local.conf** file is a key configuration file where we define settings specific to our build environment and preferences such as the target machine and additional features.  
+> The **local.conf** file is a key configuration file where we define settings specific to our build environment and preferences such as the target machine and additional features.    
+  
 Let's take a look at our file and understand its composition:  
   
 *  
