@@ -279,7 +279,7 @@ clean:
   
 After going over the key-elements of Embedded-Linux and getting familiar with its tools practically, fasten your seatbelts to delve into the world of **Yocto**  
     
-## YOCTO  
+## Yocto Project  
   
 Yocto is an open-source project designed to create custom Linux systems for embedded devices. It offers tools and resources to build efficient and optimized Linux distributions tailored to your specific needs.  
 Yocto regroups a set of components, some of which are:  
@@ -338,7 +338,13 @@ After setting the Rpi layer we need to download a crucial set of layers present 
   
 ```console
 ak47@ak47:~$ git clone git://git.yoctoproject.org/meta-openembedded -b kirkstone  
-``` 
+```  
+  
+After setting the layers we need providing us with the needed recipes for our features and application we will go through the major steps and files we manipulated to:  
+  
+#### Specify our Target 
+
+
 ## References  
   
 
