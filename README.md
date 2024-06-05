@@ -321,7 +321,15 @@ yocto_ws -- layers
   **builds/** regroups the different images built unsder one directory  
   **downloads/** stores everything automatically downloaded by Yocto when interpreting recipes and can be shared between different builds.  
   **sstate-cache/** used by BitBake to save compilation fragments (object files, archives, etc.), can be reused later and shared among different builds 
- 
+  
+First thing to do to be able to generate a compatible image with the RaspberryPi specifications. These specifications are described in recipes, archives provided by the Rpi layer that we should download under **yocto_ws/layers/**:  
+  
+```console
+ak47@ak47:~$ cd yocto_ws/layers/  
+ak47@ak47:~$ git clone git://git.yoctoproject.org/meta-raspberrypi-b kirkstone  
+```  
+  
+
 ## References  
   
 
