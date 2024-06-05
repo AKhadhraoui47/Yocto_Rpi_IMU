@@ -281,6 +281,25 @@ After going over the key-elements of Embedded-Linux and getting familiar with it
     
 ## YOCTO  
   
+Yocto is an open-source project designed to create custom Linux systems for embedded devices. It offers tools and resources to build efficient and optimized Linux distributions tailored to your specific needs.  
+Yocto regroups a set of components, some of which are:  
+  
+### 1. Recipes  
+  
+Files that contain instructions on how to build individual software packages. Each recipe specifies the source code location, dependencies, configuration options, and build steps needed to compile and install the package.  
+  
+### 2. Classes  
+  
+Reusable components that encapsulate common build tasks and functionality. Classes can be inherited by recipes to avoid code duplication and streamline the build process.  
+  
+### 3. Layers  
+  
+A modular way to extend and customize the build system. Layers contain collections of related metadata, such as recipes, configurations, and classes. Layers can be modified to include additional features, support specific hardware, or apply custom configurations.  
+   
+### 4. Bitbake  
+  
+A build engine that is the core of the Yocto Project's build system. It interprets metadata, applies configurations, and executes tasks to produce the desired software images.
+  
 ## References  
   
 
