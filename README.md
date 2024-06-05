@@ -322,14 +322,23 @@ yocto_ws -- layers
   **downloads/** stores everything automatically downloaded by Yocto when interpreting recipes and can be shared between different builds.  
   **sstate-cache/** used by BitBake to save compilation fragments (object files, archives, etc.), can be reused later and shared among different builds 
   
-First thing to do to be able to generate a compatible image with the RaspberryPi specifications. These specifications are described in recipes, archives provided by the Rpi layer that we should download under **yocto_ws/layers/**:  
+First of all we need to download the reference distribution of Yocto which is Poky. Poky combines BitBake and OpenEmbedded-Core with configurations and scripts. It serves as a starting point for developing custom embedded Linux distributions.  
   
 ```console
 ak47@ak47:~$ cd yocto_ws/layers/  
-ak47@ak47:~$ git clone git://git.yoctoproject.org/meta-raspberrypi-b kirkstone  
+ak47@ak47:~$ git clone git://git.yoctoproject.org/poky -b kirkstone
+```
+First thing to do to be able to generate a compatible image with the RaspberryPi specifications. These specifications are described in recipes, archives provided by the Rpi layer that we should download under **yocto_ws/layers/**:  
+  
+```console
+ak47@ak47:~$ git clone git://git.yoctoproject.org/meta-raspberrypi -b kirkstone  
 ```  
   
-
+After setting the Rpi layer we need to download a crucial set of layers present under **meta-openembedded**. This set regroups thousands of recipes necessary for any Embedded Linux application.  
+  
+```console
+ak47@ak47:~$ git clone git://git.yoctoproject.org/meta-openembedded -b kirkstone  
+``` 
 ## References  
   
 
