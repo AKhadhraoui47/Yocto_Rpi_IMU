@@ -340,11 +340,16 @@ After setting the Rpi layer we need to download a crucial set of layers present 
 ak47@ak47:~$ git clone git://git.yoctoproject.org/meta-openembedded -b kirkstone  
 ```  
   
-After setting the layers we need providing us with the needed recipes for our features and application we will go through the major steps and files we manipulated to:  
+After setting the layers we need to set our building environment. The **oe-init-env** script provided by **poky** will do the trick, we just need to specify the build directory:  
   
-#### Specify our Target 
-
-
+```console
+ak47@ak47~:$ source layers/poky/oe-init-env builds/build-rpi/
+```  
+     
+#### 1. Specify our Target 
+  
+ 
+  
 ## References  
   
 
