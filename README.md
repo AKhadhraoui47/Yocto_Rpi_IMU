@@ -385,14 +385,18 @@ IMAGE_FSTYPES = "rpi-sdimg"
 ```   
   
 * **Adding a Root user**
-> Extrausers is used to manage user and group creation within the built image.
+> Extrausers class is used to manage user and group creation within the built image.
   
 ```
 INHERIT += "extrausers" 
 EXTRA_USERS_PARAMS += "usermod -p '\$5\$f0r5NbGw3PeHlbq/\$qUkA2Kq72d/zCro3vj9UVtONjMjm7EL1RIaKmyO7G2B' root;"
 ```  
   
-
+Now that we adapted our [local.conf](build-rpi/conf/local.conf) file, we will create our [meta-my-layer](meta-my-layer/) which will host our custom recipes.  
+A key recipe in our layer is the custom [image](meta-my-layer/images/my-image.bb) describing the features and packages present in our project:  
+> Recipes describing a custom image should be stored under an **images** named directory  
+  
+   
 ## References  
   
 
