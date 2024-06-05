@@ -343,8 +343,23 @@ ak47@ak47:~$ git clone git://git.yoctoproject.org/meta-openembedded -b kirkstone
 After setting the layers we need to set our building environment. The **oe-init-env** script provided by **poky** will do the trick, we just need to specify the build directory:  
   
 ```console
-ak47@ak47~:$ source layers/poky/oe-init-env builds/build-rpi/
+ak47@ak47~:$ source yocto_ws/layers/poky/oe-init-env yocto_ws/builds/build-rpi/
 ```  
+  
+After setting the build environment, if we check the layers used by **bitbake** during the **build** we will only find dafault layers, and the rpi layer we downloaded is missing, so we should add:  
+  
+```console  
+ak47@ak47~:$ bitbake-layers show-layers
+NOTE: Starting bitbake server... 
+layer                   path
+=====================================================================
+meta                    /home/ak47/yocto_ws/layers/poky/meta
+meta-poky               /home/ak47/yocto_ws/layers/poky/meta-poky
+meta-yocto-bsp          /home/ak47/yocto_ws/layers/poky/meta-yocto-bsp  
+
+ak47@ak47~:$ bitbake-layers add-layer yocto_ws/layers/meta-rapberrypi
+```  
+ 
      
 #### 1. Specify our Target 
   
