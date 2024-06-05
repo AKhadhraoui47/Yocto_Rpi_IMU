@@ -317,10 +317,10 @@ yocto_ws --> layers
          --> downloads
 ```  
   
-> layers/ regroups all needed layers for my projects for different targets  
-  builds/ regroups the different images built unsder one directory
-  downloads/ stores everything automatically downloaded by the Yocto Project when interpreting recipes. It will be populated automatically without any intervention and can be shared between different builds.  
-  sstate-cache/ used by BitBake to save compilation fragments (object files, archives, etc.), can be reused later and shared among different builds 
+> **layers/** regroups all needed layers for my projects for different targets  
+  **builds/** regroups the different images built unsder one directory  
+  **downloads/** stores everything automatically downloaded by the Yocto Project when interpreting recipes. It will be populated automatically without any intervention and can be shared between different builds.  
+  **sstate-cache/** used by BitBake to save compilation fragments (object files, archives, etc.), can be reused later and shared among different builds 
  
 ## References  
   
