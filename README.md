@@ -302,7 +302,9 @@ A build engine that is the core of the Yocto Project's build system. It interpre
   
 > We will go through some other key components and elements of Yocto project while advancing in my project analysis.  
   
- 
+## Project Study  
+  
+My project consists of building a custom Raspberry Pi 4 custom linux image with Yocto that ensures connectivity over Wi-Fi and communication with the MPU6050 sensor. All these tasks are desired to be launched automatically so we will go through the major steps to achieve these requirements. 
 ## References  
   
 
