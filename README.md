@@ -300,6 +300,9 @@ A modular way to extend and customize the build system. Layers contain collectio
   
 A build engine that is the core of the Yocto Project's build system. It interprets metadata, applies configurations, and executes tasks to produce the desired software images.
   
+> We will go through some other key components and elements of Yocto project while advancing in my project analysis.  
+  
+ 
 ## References  
   
 
