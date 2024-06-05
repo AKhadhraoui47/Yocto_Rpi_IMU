@@ -311,10 +311,13 @@ My project consists of building a Raspberry Pi 4 custom linux image with Yocto t
 So my Yocto workspace layout looks as shown below:  
   
 ```
-yocto_ws -- layers
-         -- builds
-         -- sstate-cache
-         -- downloads
+yocto_ws --> layers
+         |
+         --> builds
+         |
+         --> sstate-cache
+         |
+         --> downloads
 ``` 
  
 ## References  
