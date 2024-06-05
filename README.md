@@ -304,7 +304,19 @@ A build engine that is the core of the Yocto Project's build system. It interpre
   
 ## Project Study  
   
-My project consists of building a custom Raspberry Pi 4 custom linux image with Yocto that ensures connectivity over Wi-Fi and communication with the MPU6050 sensor. All these tasks are desired to be launched automatically so we will go through the major steps to achieve these requirements. 
+My project consists of building a Raspberry Pi 4 custom linux image with Yocto that ensures connectivity over Wi-Fi and communication with the MPU6050 sensor. All these tasks are desired to be launched automatically so we will go through the major steps to achieve these requirements.  
+  
+### No Rpi, No Party   
+  
+So my Yocto workspace layout looks as shown below:  
+  
+```
+yocto_ws -- layers
+         -- builds
+         -- sstate-cache
+         -- downloads
+``` 
+ 
 ## References  
   
 
