@@ -431,7 +431,32 @@ IMAGE_FEATURES += "read-only-rootfs"
 ```
 IMAGE_INSTALL:append = " wpa-supplicant openssh"
 ```
- 
+   
+After having an overview of our image recipe let's go further.  
+One of the most important things we should ensure for remote access is having a static IP address for our target.  
+  
+### Static IP address  
+  
+To assign a static IP address we should make changes to **/etc/network/interfaces** file, thus we should find the recipe reponsible for it which is **init-ifupdown**.  
+To do so, we will be applying a **patch** to the original interfaces file that will be added in an appended **bbappend** recipe.  
+  
+```console
+ak47@ak47~:$ ls
+interfaces
+ak47@ak47~:$ git init
+ak47@ak47~:$ git add *
+ak47@ak47~:$ git commit -m "Interfaces initial state"
+ak47@ak47~:$ nano interfaces 
+ak47@ak47~:$ git commit -m "Personal Static IP"
+git format-patch HEAD-1
+0001-Personal-Static-Ip.patch
+```  
+  
+Add to the appended recipe [init-ifupdown.bbappend](meta-my-layer/recipes-core/init-ifupdown_1.0.bbappend)  
+  
+### Kernel Modules  
+  
+
 ## References  
   
 
