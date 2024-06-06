@@ -440,6 +440,8 @@ One of the most important things we should ensure for remote access is having a 
 To assign a static IP address we should make changes to **/etc/network/interfaces** file, thus we should find the recipe reponsible for it which is **init-ifupdown**.  
 To do so, we will be applying a **patch** to the original interfaces file that will be added in an appended **bbappend** recipe.  
   
+> Patches are files that contain changes to be applied to source code or other text files.  
+  Appended recipes are used to extend or modify existing recipes without changing the original files.
 ```console
 ak47@ak47~:$ ls
 interfaces
@@ -452,7 +454,7 @@ git format-patch HEAD-1
 0001-Personal-Static-Ip.patch
 ```  
   
-Add to the appended recipe [init-ifupdown.bbappend](meta-my-layer/recipes-core/init-ifupdown_1.0.bbappend)  
+Add to patch the appended recipe [init-ifupdown.bbappend](meta-my-layer/recipes-core/init-ifupdown_1.0.bbappend)  
   
 ### Kernel Modules  
   
