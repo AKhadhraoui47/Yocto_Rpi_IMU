@@ -456,13 +456,13 @@ Add to patch the appended recipe [init-ifupdown.bbappend](meta-my-layer/recipes-
   
 Kernel modules are pieces of code that can be dynamically loaded and unloaded into the Linux kernel without requiring a full kernel recompilation or restart. They extend the functionality of the kernel by providing device drivers, file system support, networking protocols, and other features. 
 And in order to get our MPU6050 working we need to compile its kernel drive, already provided by [bootlin](https://elixir.bootlin.com/linux/v5.15.92/source/drivers/iio/imu/inv_mpu6050).  
-But as our target CPU architecture is different from the host machine, we **Cross-Compile** our kernel module.  
+But as our target CPU architecture is different from the host machine, we should **Cross-Compile** our kernel module.  
 For that we should simulate the target environment on our host machine by extracting the **Cross-Compilation Toolchain**:    
   
 ```
 ak47@ak47~:$ bitbake  -c populate_sdk  my-image 
 ```   
-> **TOOLCHAIN_TARGET_TASK:append = " kernel-devsrc"** by adding to the local.conf file we extract also the kernel header files.  
+> **TOOLCHAIN_TARGET_TASK:append = " kernel-devsrc"** by adding to the **local.conf** file we extract also the kernel header files.  
   
 ### On boot Task   
   
