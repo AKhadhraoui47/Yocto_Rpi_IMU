@@ -425,13 +425,13 @@ IMAGE_INSTALL:append = " my-scripts mpu-start"
 IMAGE_FEATURES += "read-only-rootfs"
 ```
   
-* **For wireless connection management we installed the **wpa-supplicant** and for secure remote access to the target we install **openssh**  
+* **For wireless connection management we installed the **wpa-supplicant** and for secure remote access to the target we install openssh**  
     
   
 ```
 IMAGE_INSTALL:append = " wpa-supplicant openssh"
 ```
-
+ 
 ## References  
   
 
