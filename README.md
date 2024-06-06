@@ -405,15 +405,16 @@ IMAGE_INSTALL:append = " python3 packagegroup-core-buildessential"
 ```  
   
 * **Adding the Wi-Fi and I2C modules firmwares**
-> i2c-tools  is a set of tools needed to analyze the i2c bus, necessary when we will be working the mpu6050  
-  mpu6050-kermod is a cross-compiled kernel module that we will talk about later    
+> **i2c-tools**  is a set of tools needed to analyze the i2c bus, necessary when we will be working the mpu6050  
+  **mpu6050-kermod** is a cross-compiled kernel module that we will talk about later    
   
 ```
 IMAGE_INSTALL:append = " linux-firmware-bcm43455 bcm2835-dev i2c-tools mpu6050-kermod"
 ```
   
 * **Installing my custom shell scripts**  
-  
+> The **mpu-start** recipe is responsible for creating a **service**. We will get to that later.  
+  **my-scripts** installs few shell scripts as executables into target.     
 ```
 IMAGE_INSTALL:append = " my-scripts mpu-start"
 ```
@@ -424,7 +425,12 @@ IMAGE_INSTALL:append = " my-scripts mpu-start"
 IMAGE_FEATURES += "read-only-rootfs"
 ```
   
-
+* **For wireless connection management we installed the **wpa-supplicant** and for secure remote access to the target we install **openssh**  
+    
+  
+```
+IMAGE_INSTALL:append = " wpa-supplicant openssh"
+```
 
 ## References  
   
