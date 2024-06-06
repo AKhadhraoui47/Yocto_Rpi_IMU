@@ -394,9 +394,38 @@ EXTRA_USERS_PARAMS += "usermod -p '\$5\$f0r5NbGw3PeHlbq/\$qUkA2Kq72d/zCro3vj9UVt
   
 Now that we adapted our [local.conf](build-rpi/conf/local.conf) file, we will create our [meta-my-layer](meta-my-layer/) which will host our custom recipes.  
 A key recipe in our layer is the custom [image](meta-my-layer/recipes-custom/images/my-image.bb) describing the features and packages present in our project:  
-> Recipes describing a custom image should be stored under an **images** named directory  
+> Recipes describing a custom image should be stored under an **images/** named directory  
   
-   
+* **Adding my fav text editor and different tools for on-target development**
+> The feature **packagegroup-core-buildessential** is used to install **make gcc gdb g++ etc.**  
+  
+```
+IMAGE_INSTALL:append = " nano"  
+IMAGE_INSTALL:append = " python3 packagegroup-core-buildessential"
+```  
+  
+* **Adding the Wi-Fi and I2C modules firmwares**
+> i2c-tools  is a set of tools needed to analyze the i2c bus, necessary when we will be working the mpu6050  
+  mpu6050-kermod is a cross-compiled kernel module that we will talk about later    
+  
+```
+IMAGE_INSTALL:append = " linux-firmware-bcm43455 bcm2835-dev i2c-tools mpu6050-kermod"
+```
+  
+* **Installing my custom shell scripts**  
+  
+```
+IMAGE_INSTALL:append = " my-scripts mpu-start"
+```
+  
+* **For enhanced security aspects we will make our filesystem Read-Only**
+  
+```
+IMAGE_FEATURES += "read-only-rootfs"
+```
+  
+
+
 ## References  
   
 
