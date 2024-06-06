@@ -443,14 +443,10 @@ To do so, we will be applying a **patch** to the original interfaces file that w
 > Patches are files that contain changes to be applied to source code or other text files.  
   Appended recipes are used to extend or modify existing recipes without changing the original files.
 ```console
-ak47@ak47~:$ ls
-interfaces
-ak47@ak47~:$ git init
-ak47@ak47~:$ git add *
 ak47@ak47~:$ git commit -m "Interfaces initial state"
 ak47@ak47~:$ nano interfaces 
 ak47@ak47~:$ git commit -m "Personal Static IP"
-git format-patch HEAD-1
+ak47@ak47~:$ git format-patch HEAD-1
 0001-Personal-Static-Ip.patch
 ```  
   
@@ -458,10 +454,37 @@ Add to patch the appended recipe [init-ifupdown.bbappend](meta-my-layer/recipes-
   
 ### Kernel Modules  
   
-
+Kernel modules are pieces of code that can be dynamically loaded and unloaded into the Linux kernel without requiring a full kernel recompilation or restart. They extend the functionality of the kernel by providing device drivers, file system support, networking protocols, and other features. 
+And in order to get our MPU6050 working we need to compile its kernel drive, already provided by [bootlin](https://elixir.bootlin.com/linux/v5.15.92/source/drivers/iio/imu/inv_mpu6050).  
+But as our target CPU architecture is different from the host machine, we **Cross-Compile** our kernel module.  
+For that we should simulate the target environment on our host machine by extracting the **Cross-Compilation Toolchain**:    
+  
+```
+ak47@ak47~:$ bitbake  -c populate_sdk  my-image 
+```   
+> **TOOLCHAIN_TARGET_TASK:append = " kernel-devsrc"** by adding to the local.conf file we extract also the kernel header files.  
+  
+### On boot Task   
+  
+The final task is creating a service that launchesnour application on-boot. This can be done by writing a script under **/etc/init.d** directory which will launch a script that will:  
+  
+* **Insert the bcm2835 kernel module**
+* **Insert the i2c-dev kernel module**
+* **Insert the mpu6050 kernel module**
+* **Check the existence of the sensor**
+* **Create an i2c instance**
+* **Reads and Logs data from the hwmon**  
+  
+The launch script and the recipe can be found under [mpulaunch](meta-my-layer/recipes-custom/my-scripts/mpulaunch) and the recipe for creating the service is under [mpu-start](meta-my-layer/recipes-custom/mpu-start).  
+   
 ## References  
   
-
+https://linuxembedded.fr/2015/12/yocto-comprendre-bitbake  
+https://kickstartembedded.com/2021/12/22/yocto-part-4-building-a-basic-image-for-raspberry-pi/  
+https://bootlin.com/docs/  
+https://www.blaess.fr/christophe/yocto-lab/index.html  
+https://docs.yoctoproject.org/4.0.14/  
+https://www.youtube.com/watch?v=2-PwskQrZac
    
 
 
