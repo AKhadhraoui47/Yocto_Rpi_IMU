@@ -22,7 +22,7 @@ The output is an expanded source code file.
 ak47@ak47:~$ gcc -o file.i -E file.c    
 ```  
 ### 2. Compilation
-
+ 
 The compiler translates the preprocessed code into assembly code. This step includes:  
   
 * Syntax and semantic analysis  
