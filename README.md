@@ -28,7 +28,7 @@ The compiler translates the preprocessed code into assembly code. This step incl
 * Syntax and semantic analysis  
 * Intermediate code generation  
 * Optimization (depending on compiler settings)  
-  
+   
 The result is an assembly file.  
   
 ```console  
